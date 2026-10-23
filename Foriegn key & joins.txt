@@ -1,0 +1,83 @@
+----- SQL -----
+
+1) folder - database - schema
+
+2) table - rows & columns 
+
+3) MySQL : relational 
+
+
+4) DDL : Data Definition Language : queries which acts on whole data or structure rather that acting on particular rows are lies under DDL. ex : CREATE , ALTER , DROP , TRUNCATE
+
+5) DML : Data Manipulation Language : queries which acts on row or rows means act on particular data rather than acting on whole structure are lies under DML. ex : INSERT , DELETE , UPDATE 
+
+6) DQL : Data Query Language : Retriving Queries : SELECT 
+
+7) Datatypes : int , varchar(45) , double , decimal , boolean , text , DATETIME 
+
+8) constraint : rules : primarykey , notnull , unique , default
+
+9) operators :  AND , OR , NULL ,   name = "raj" , > < , 
+
+10) foriegn key : join the data of 2 tables
+
+
+   employee :
+
+ id   name   salary  fkAdd
+
+ 1    raj     1234    1
+ 2    tina    1234    2
+ 3    jay     1234    1
+ 4    sam     1234    1
+ 
+   
+   address : 
+
+id , pincode , area ,  city ,  state ,  country 
+
+1    411052   karve    pune     mh      INDIA
+2    411058   deccan   pune     mh      INDIA
+
+
+  
+     1) p - primary key in self table then only it can become a foreign key in another table
+
+     2) same data type 
+
+
+SELECT * FROM zomato.student;
+SELECT * FROM zomato.faculty;
+
+-- inner joins : returns only the matching data between 2 tables
+SELECT student.name , student.subject , faculty.faculty_name
+FROM student INNER JOIN faculty ON student.subject = faculty.lang ; 
+
+-- left joins : returns all the data of left table and declare null if not matched in right table
+SELECT student.name , student.subject , faculty.faculty_name
+FROM student LEFT JOIN faculty ON student.subject = faculty.lang ; 
+
+
+-- right joins : returns all the data of right table and declare null if not matched in left table
+SELECT student.name , student.subject , faculty.faculty_name
+FROM student RIGHT JOIN faculty ON student.subject = faculty.lang ; 
+
+
+SELECT student.name , student.subject , faculty.faculty_name
+FROM student LEFT JOIN faculty ON student.subject = faculty.lang 
+UNION
+SELECT student.name , student.subject , faculty.faculty_name
+FROM student RIGHT JOIN faculty ON student.subject = faculty.lang ; 
+
+
+
+
+
+
+
+
+
+
+
+
+

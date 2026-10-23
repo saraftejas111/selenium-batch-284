@@ -46,6 +46,11 @@ id , pincode , area ,  city ,  state ,  country
      2) same data type 
 
 
+SELECT employee.name , employee.email , address.pin , address.area , address.city
+FROM employee 
+JOIN address ON employee.add_fk = address.pin ;
+
+
 SELECT * FROM zomato.student;
 SELECT * FROM zomato.faculty;
 
